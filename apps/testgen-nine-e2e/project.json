@@ -1,0 +1,29 @@
+{
+  "name": "testgen-nine-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/testgen-nine-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/testgen-nine-e2e/cypress.json",
+        "devServerTarget": "testgen-nine:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "testgen-nine:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/testgen-nine-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["testgen-nine"]
+}

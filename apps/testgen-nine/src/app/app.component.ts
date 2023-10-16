@@ -8,7 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   sideNavOpen = false;
   sideNavOpen = false;
+  sideNavOpen = false;
   title = 'testgen-nine';
+
+  sideNavToggle(): void {
+    this.sideNavOpen = !this.sideNavOpen;
+  }
 
   sideNavToggle(): void {
     this.sideNavOpen = !this.sideNavOpen;
